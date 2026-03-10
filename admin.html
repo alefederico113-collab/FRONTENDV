@@ -1,30 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <head>
-<title>Admin Dashboard</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="description" content="Pannello amministrativo per gestire prodotti e crediti">
 </head>
 
 <body>
+	<header class="site-header">
+		<div class="container">
+			<h1>Admin Dashboard</h1>
+		</div>
+	</header>
 
-<h1>Admin</h1>
+	<main class="container">
+		<section class="card admin-grid">
+			<div class="card-block">
+				<h2>Aggiungi prodotto</h2>
+				<form id="addProductForm" class="form">
+					<input id="name" placeholder="Nome prodotto" required>
+					<input id="price" placeholder="Prezzo" type="number" min="0" step="0.01" required>
+					<input id="stock" placeholder="Stock" type="number" min="0" required>
+					<div class="form-actions">
+						<button type="button" onclick="addProduct()" class="btn primary">Aggiungi</button>
+					</div>
+				</form>
+			</div>
 
-<h2>Aggiungi prodotto</h2>
+			<div class="card-block">
+				<h2>Assegna crediti</h2>
+				<form id="addCreditsForm" class="form">
+					<input id="userId" placeholder="ID utente" type="number" min="1" required>
+					<input id="credits" placeholder="Crediti da aggiungere" type="number" min="0" required>
+					<div class="form-actions">
+						<button type="button" onclick="addCredits()" class="btn secondary">Assegna</button>
+					</div>
+				</form>
+			</div>
+		</section>
 
-<input id="name" placeholder="nome">
-<input id="price" placeholder="prezzo">
-<input id="stock" placeholder="stock">
+		<section class="card">
+			<h2>Log</h2>
+			<div id="adminLog" class="log">Nessuna azione recente</div>
+		</section>
+	</main>
 
-<button onclick="addProduct()">Aggiungi</button>
+	<footer class="site-footer">
+		<div class="container">Made with care — Admin</div>
+	</footer>
 
-<h2>Bonus crediti</h2>
-
-<input id="userId" placeholder="user id">
-<input id="credits" placeholder="crediti">
-
-<button onclick="addCredits()">Assegna</button>
-
-<script src="script.js"></script>
-
+	<script src="script.js"></script>
 </body>
+
 </html>

@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-<title>Shop User</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Shop - Catalogo</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+	<header class="site-header">
+		<div class="container">
+			<h1>Negozio</h1>
+			<div class="user-credits">Crediti: <span id="credits">0</span></div>
+		</div>
+	</header>
 
-<h1>Catalogo</h1>
+	<main class="container">
+		<section class="controls card">
+			<input id="search" placeholder="Cerca prodotto..." oninput="renderProducts()">
+			<select id="sort" onchange="renderProducts()">
+				<option value="">Ordina</option>
+				<option value="price-asc">Prezzo ↑</option>
+				<option value="price-desc">Prezzo ↓</option>
+				<option value="stock-desc">Disponibilità</option>
+			</select>
+		</section>
 
-<h2>Crediti: <span id="credits"></span></h2>
+		<section id="products" class="products-grid"></section>
+	</main>
 
-<div id="products"></div>
+	<footer class="site-footer">
+		<div class="container">Grazie per essere con noi</div>
+	</footer>
 
-<script src="script.js"></script>
-
+	<script src="script.js"></script>
 </body>
+
 </html>
