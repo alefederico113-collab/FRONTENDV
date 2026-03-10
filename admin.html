@@ -2,32 +2,50 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard Admin</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - E-Commerce</title>
+    <link rel="stylesheet" href="stile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <nav>
-        <h1>Admin Dashboard</h1>
-        <a href="index.html">Torna allo Store</a>
+        <h1>Admin<span>Panel</span></h1>
+        <div class="nav-links">
+            <a href="index.html">🛒 Vai allo Store</a>
+        </div>
     </nav>
+
     <div class="container">
-        <h2>Gestione Utenti</h2>
-        <div>
-            <input type="number" id="bonus-amount" placeholder="Crediti da aggiungere">
-            <button onclick="giveBonus()">Assegna ad Utente 1</button>
-        </div>
+        
+        <section class="admin-section">
+            <h2>Assegna Crediti Bonus</h2>
+            <p class="subtitle">Aggiungi fondi al portafoglio dell'utente (ID: 1)</p>
+            <div style="display: flex; gap: 10px; margin-top: 1rem;">
+                <input type="number" id="bonus-amount" placeholder="Esempio: 50" min="1">
+                <button onclick="giveBonus()" style="flex: 1;">Invia Crediti 🪙</button>
+            </div>
+        </section>
 
-        <h2>Aggiungi Prodotto</h2>
-        <div>
-            <input type="text" id="new-name" placeholder="Nome">
-            <input type="number" id="new-price" placeholder="Prezzo">
-            <input type="number" id="new-stock" placeholder="Stock">
-            <button onclick="addProduct()">Aggiungi</button>
-        </div>
+        <section class="admin-section">
+            <h2>Nuovo Prodotto</h2>
+            <div class="grid-form">
+                <input type="text" id="new-name" placeholder="Nome prodotto">
+                <input type="number" id="new-price" placeholder="Prezzo (crediti)">
+                <input type="number" id="new-stock" placeholder="Quantità magazzino">
+                <button onclick="addProduct()" class="btn-success">Aggiungi al Catalogo +</button>
+            </div>
+        </section>
 
-        <h2>Gestione Stock</h2>
-        <div id="admin-catalog"></div>
+        <section>
+            <h2>Gestione Magazzino</h2>
+            <div id="admin-catalog" class="grid">
+                <p>Caricamento prodotti...</p>
+            </div>
+        </section>
+
     </div>
+
     <script src="admin.js"></script>
 </body>
 </html>
