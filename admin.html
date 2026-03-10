@@ -1,58 +1,33 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Admin Dashboard</title>
-	<link rel="stylesheet" href="style.css">
-	<meta name="description" content="Pannello amministrativo per gestire prodotti e crediti">
+    <meta charset="UTF-8">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-	<header class="site-header">
-		<div class="container">
-			<h1>Admin Dashboard</h1>
-		</div>
-	</header>
+    <nav>
+        <h1>Admin Dashboard</h1>
+        <a href="index.html">Torna allo Store</a>
+    </nav>
+    <div class="container">
+        <h2>Gestione Utenti</h2>
+        <div>
+            <input type="number" id="bonus-amount" placeholder="Crediti da aggiungere">
+            <button onclick="giveBonus()">Assegna ad Utente 1</button>
+        </div>
 
-	<main class="container">
-		<section class="card admin-grid">
-			<div class="card-block">
-				<h2>Aggiungi prodotto</h2>
-				<form id="addProductForm" class="form">
-					<input id="name" placeholder="Nome prodotto" required>
-					<input id="price" placeholder="Prezzo" type="number" min="0" step="0.01" required>
-					<input id="stock" placeholder="Stock" type="number" min="0" required>
-					<div class="form-actions">
-						<button type="button" onclick="addProduct()" class="btn primary">Aggiungi</button>
-					</div>
-				</form>
-			</div>
+        <h2>Aggiungi Prodotto</h2>
+        <div>
+            <input type="text" id="new-name" placeholder="Nome">
+            <input type="number" id="new-price" placeholder="Prezzo">
+            <input type="number" id="new-stock" placeholder="Stock">
+            <button onclick="addProduct()">Aggiungi</button>
+        </div>
 
-			<div class="card-block">
-				<h2>Assegna crediti</h2>
-				<form id="addCreditsForm" class="form">
-					<input id="userId" placeholder="ID utente" type="number" min="1" required>
-					<input id="credits" placeholder="Crediti da aggiungere" type="number" min="0" required>
-					<div class="form-actions">
-						<button type="button" onclick="addCredits()" class="btn secondary">Assegna</button>
-					</div>
-				</form>
-			</div>
-		</section>
-
-		<section class="card">
-			<h2>Log</h2>
-			<div id="adminLog" class="log">Nessuna azione recente</div>
-		</section>
-	</main>
-
-	<footer class="site-footer">
-		<div class="container">Made with care — Admin</div>
-	</footer>
-
-	<script src="script.js"></script>
+        <h2>Gestione Stock</h2>
+        <div id="admin-catalog"></div>
+    </div>
+    <script src="admin.js"></script>
 </body>
-
 </html>

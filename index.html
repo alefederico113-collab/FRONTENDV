@@ -1,39 +1,22 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Shop - Catalogo</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>E-Commerce - Utente</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-	<header class="site-header">
-		<div class="container">
-			<h1>Negozio</h1>
-			<div class="user-credits">Crediti: <span id="credits">0</span></div>
-		</div>
-	</header>
-
-	<main class="container">
-		<section class="controls card">
-			<input id="search" placeholder="Cerca prodotto..." oninput="renderProducts()">
-			<select id="sort" onchange="renderProducts()">
-				<option value="">Ordina</option>
-				<option value="price-asc">Prezzo ↑</option>
-				<option value="price-desc">Prezzo ↓</option>
-				<option value="stock-desc">Disponibilità</option>
-			</select>
-		</section>
-
-		<section id="products" class="products-grid"></section>
-	</main>
-
-	<footer class="site-footer">
-		<div class="container">Grazie per essere con noi</div>
-	</footer>
-
-	<script src="script.js"></script>
+    <nav>
+        <h1>Store</h1>
+        <a href="admin.html">Vai alla Dashboard Admin</a>
+    </nav>
+    <div class="container">
+        <h2>Benvenuto, <span id="user-name">...</span></h2>
+        <h3>I tuoi Crediti: <span id="user-credits">0</span></h3>
+        
+        <div id="catalog" class="grid">
+            </div>
+    </div>
+    <script src="app.js"></script>
 </body>
-
 </html>
